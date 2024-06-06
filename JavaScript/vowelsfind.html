@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let arr = ["kolkata","zks", "mumbai", "Goa", "Saltlake", "utarakhand", "Rhythm", ];
+        let result = arr.filter((val) => {
+            const vowels = 'aeiouAEIOU';
+            let count = 0;
+            for (let i = 0; i < val.length; i++) {
+                if (vowels.includes(val[i])) {
+                    count++;
+                }
+            }
+            return count >= 2;
+        });
+        console.log(result);
+    </script>
+</body>
+</html>

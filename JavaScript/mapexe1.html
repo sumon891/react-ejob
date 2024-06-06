@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="data"></div> 
+
+    <script>
+        let city = ['kolkata', 'delhi', 'mumbai', 'pune', 'goa', 'kashmir'];
+        let res = "<select><option>Select City</option>";
+        let temp = city.map((val) => {
+            return `<option>${val}</option>`;
+        });
+        res = res + temp.join(" ") + "</select>";
+        document.getElementById('data').innerHTML = res;
+    </script>
+</body>
+</html>

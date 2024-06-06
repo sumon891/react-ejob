@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Data</title>
+</head>
+<body>
+
+<h1>Employee Data</h1>
+<table border="1" id="employeeTable">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>State</th>
+      <th>Pin</th>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody">
+  </tbody>
+</table>
+
+<script>
+var employees = [
+    {id: 20, nm: 'raj', loc: {st: 'wb', pin: 23, city: 'kolkata'}},
+    {id: 20, nm: 'raj', loc: {st: 'wb', pin: 23, city: 'kolkata'}},
+    {id: 20, nm: 'raj', loc: {st: 'wb', pin: 23, city: 'kolkata'}}
+];
+
+function populateTable(data) {
+    var tableBody = document.getElementById("tableBody");
+    var html = '';
+
+    data.forEach(function(emp) {
+        html += `
+            <tr>
+                <td>${emp.id}</td>
+                <td>${emp.nm}</td>
+                <td>${emp.loc.st}</td>
+                <td>${emp.loc.pin}</td>
+                <td>${emp.loc.city}</td>
+            </tr>
+        `;
+    });
+
+    tableBody.innerHTML = html;
+}
+
+populateTable(employees);
+</script>
+
+</body>
+</html>

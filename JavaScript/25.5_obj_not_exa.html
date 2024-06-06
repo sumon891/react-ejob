@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let salary = {
+            basic: 5000,
+            lta: 1000,
+            pf: 500,
+            findgross: function(){
+                let gross = this.basic + this.lta + (this.pf * 0.75);
+                return gross;
+            },
+            inhand: function(){
+                let gross = this.findgross();
+                let inHand = gross - this.pf;
+                return inHand;
+            }
+        }
+
+        document.write("Gross Salary: " + salary.findgross() + "<br>");
+        document.write("In-hand Salary: " + salary.inhand());
+
+    </script>
+</body>
+</html>

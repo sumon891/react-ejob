@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Result {
+            constructor(p, r, t) {
+                this.prin = p;
+                this.rate = r;
+                this.time = t;
+            }
+
+            findSi = () => {
+                let res = (this.prin * this.rate * this.time) / 100;
+                return res;
+            }
+
+            findAmt = () => {
+                let resamt = this.prin + this.findSi();
+                return resamt;
+            }
+        }
+
+        let obj = new Result(1000, 2, 12);
+        document.write("Simple Interest: " + obj.findSi() + "<br>");
+        document.write("Total Amount: " + obj.findAmt() + "<br>");
+    </script>
+
+</body>
+</html>

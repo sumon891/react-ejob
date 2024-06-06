@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  Enter the Sentence:
+  <input type="text" id="text">
+  <button id="btn" onclick="countText()">Count</button>
+  <div id="results"></div>
+
+  <script>
+    function countText() {
+      let text = document.getElementById('text').value;
+      let resultDiv = document.getElementById('results');
+      resultDiv.innerHTML = "Length of the text: " + text.length;
+
+      let arr = text.split(" ");
+      let maxWord = "";
+      let minWord = arr[0];
+
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i].length > maxWord.length) {
+          maxWord = arr[i];
+        }
+        if (arr[i].length < minWord.length && arr[i].length > 0) {
+          minWord = arr[i];
+        }
+      }
+      resultDiv.innerHTML += "<br>The longest word is: " + maxWord;
+      resultDiv.innerHTML += "<br>The shortest word is: " + minWord;
+
+      // Find word with max frequency
+      let wordFreq = {};
+
+      for (let i = 0; i < arr.length; i++) {
+        let word = arr[i];
+        if (wordFreq[word]) {
+          wordFreq[word]++;
+        } else {
+          wordFreq[word] = 1;
+        }
+      }
+
+      let maxFreq = 0;
+      let mostFrequentWord = "";
+
+      for (let word in wordFreq) {
+        if (wordFreq[word] > maxFreq) {
+          maxFreq = wordFreq[word];
+          mostFrequentWord = word;
+        }
+      }
+
+      resultDiv.innerHTML += "<br>The most frequent word is: " + mostFrequentWord + " (appears " + maxFreq + " times)";
+    }
+  </script>
+</body>
+
+</html>

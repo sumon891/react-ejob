@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        var phy = window.prompt("Enter Physics Marks: ");
+        var chem = window.prompt("Enter Chem Marks: ");
+        var bio = window.prompt("Enter biology marks: ");
+        let total = parseInt(phy) + parseInt(chem) + parseInt(bio);
+        let per = (total/300) * 100;
+        document.write(`The total marks is ${total} and the perentage is ${per}`);
+    </script>
+</body>
+</html>

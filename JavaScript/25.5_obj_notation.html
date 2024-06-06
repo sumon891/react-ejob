@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Country Dropdown</title>
+</head>
+<body>
+    <select id="countryDropdown"></select>
+
+    <script>
+        // Define the object
+        var obj = {
+            country: ['India', 'USA', 'Brazil', 'China']
+        };
+
+        // Callback function to process country names
+        function createDropdown(countries) {
+            // Get the dropdown element
+            var dropdown = document.getElementById('countryDropdown');
+            
+            // Initialize an empty string for the HTML content
+            var optionsHTML = '';
+
+            // Loop through the country names and create option elements as HTML strings
+            countries.forEach(function(country) {
+                optionsHTML += `<option value="${country}">${country}</option>`;
+            });
+
+            // Set the innerHTML of the dropdown element
+            dropdown.innerHTML = optionsHTML;
+        }
+
+        // Use the callback function to create the dropdown
+        createDropdown(obj.country);
+    </script>
+</body>
+</html>

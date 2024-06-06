@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="test">
+        Name:
+        <input type="text" name="nm" />
+        <br>
+        Age :
+        <input type="number" name="ag" />
+        <br>
+        Select Dept:
+        <select name="dept">
+            <option value="">Select Dept</option>
+            <option value="compSc">CSE</option>
+            <option value="electrical">EE</option>
+            <option value="mech">ME</option>
+        </select>
+        <br>
+        <input type="button" value="SHOW" onclick="disp()">
+    </form>
+
+    <div id="d1" style="color: green; background-color: lightblue;">
+
+    </div>
+
+
+
+    <script>
+        function disp() {
+            let name = document.test.nm.value;
+            let age = document.test.ag.value;
+            let dept = document.test.dept.value;
+            document.getElementById('d1').innerHTML = `<ul>
+        <li>${name}</li>
+        <li>${age}</li>
+        <li>${dept}</li>
+    </ul>`
+        }
+    </script>
+</body>
+
+</html>

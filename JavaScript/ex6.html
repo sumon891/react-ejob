@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="showInfo()">Show Info</button>
+    <h3 id="text"></h3>
+    <script>
+        function showInfo() {
+            let name = prompt("Enter the name: ");
+            let email = prompt("Enter the email");
+            let dept = prompt("Enter the dept");
+            document.getElementById('text').innerHTML = `<ol> <li>${name}</li><li>${email}</li><li>${dept}</li> </ol>`
+        }
+
+    </script>
+</body>
+
+</html>

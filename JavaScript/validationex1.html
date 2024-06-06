@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="test" onsubmit="return validate()">
+        Enter Name: <input type="text" name="nm" required />
+        <br>
+        Enter age: <input type="number" name="age" required>
+        <br>
+        Enter password: <input type="password" name="pass" required>
+        <br>
+        Confirm password: <input type="password" name="cpass" required>
+        <br>
+        Select gender :
+        <input type="radio" name="gen" value="male">Male 
+        <input type="radio" name="gen" value="female"> Female
+        <br>
+        Select City :
+        <select name="loc">
+            <option value="">Select LOC</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Pune">Pune</option>
+            <option value="Goa">Goa</option>
+        </select>
+        <input type="submit" value="Register" />
+    </form>
+    <script>
+        function validate() {
+            let n = document.test.nm.value;
+            let a = document.test.age.value;
+            let p = document.test.pass.value;
+            let cp = document.test.cpass.value;
+            let g = document.test.gen.value;
+            let loc = document.test.loc.value
+
+            if (n.length < 5 || n.length > 10) {
+                alert("Name should be between 5 to 10 char");
+                return false;
+            }
+            else if (a < 18 || a > 25) {
+                alert("Age should be in range of 18 to 25");
+                return false;
+            }
+            else if (p.length < 10 || !p.includes('@')) {
+                alert("Password should be minimum 10 char and contain a @");
+                return false;
+            }
+            else if (p != cp) {
+                alert("Password & Confirm password does not match");
+                return false;
+            }
+            else if(g == "" || g == null){
+                alert("Gender Not selected!!");
+                return false;
+            }
+            else if(loc == "" || loc == null){
+                alert("Location not selected");
+            }
+            else {
+                alert("Form is ready to submit");
+                return true;
+            }
+        }
+    </script>
+</body>
+
+</html>

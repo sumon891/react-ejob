@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Populate Object Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Information</h1>
+    <div id="student-info"></div>
+
+    <script>
+        // JavaScript object
+        var stud = {
+            name: 'raj',
+            address: {
+                city: 'kolkata',
+                state: 'wb',
+                geo: {
+                    lat: 45,
+                    lng: 35,
+                    dir: {
+                        loc: 'northeast'
+                    }
+                }
+            }
+        };
+
+        // Function to create an ordered list from an object
+        function createOrderedListHTML(obj) {
+            let html = '<ol>';
+
+            // Helper function to recursively add properties to the HTML string
+            function addProperties(obj) {
+                for (let key in obj) {
+                    if (obj.hasOwnProperty(key)) {
+                        if (typeof obj[key] === 'object') {
+                            html += '<li>' + key + ':<ol>';
+                            addProperties(obj[key]);
+                            html += '</ol></li>';
+                        } else {
+                            html += '<li>' + key + ': ' + obj[key] + '</li>';
+                        }
+                    }
+                }
+            }
+
+            addProperties(obj);
+            html += '</ol>';
+            return html;
+        }
+
+        // Get the div element to populate the data
+        var studentInfoDiv = document.getElementById('student-info');
+
+        // Generate the ordered list HTML and set it as the innerHTML of the div
+        studentInfoDiv.innerHTML = createOrderedListHTML(stud);
+    </script>
+</body>
+</html>

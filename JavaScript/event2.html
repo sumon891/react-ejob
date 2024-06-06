@@ -1,0 +1,24 @@
+//onChange -- form input
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     function show(){
+        let g = document.test.gen.value;
+        let d = document.test.db.value;
+        let c = document.test.loc.value;
+        document.getElementById('head3').innerText = `Gender: ${g} DOB: ${d} CITY: ${c}`
+     }
+    </script>
+    Select gender:
+    <input type="radio" name="gen" value="male" onchange="show()">
+    <input type="radio" name="gen" value="female" onchange="show()">
+
+</body>
+</html>

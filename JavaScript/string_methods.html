@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let st = "Hi this is our react class, we like to read";
+        document.write("Length is: "+st.length+"<br>");
+        document.write(st.slice(0,10) + "<br>");
+        document.write(st.substring(11, 26) + "<br>");
+        document.write(st.substr(3, 5)+"<br>");
+        let str2 = "I like react, I know react, I teach react";
+        document.write(str2.indexOf("I know react")+"<br>");
+        document.write(str2.indexOf("java")+"<br>");
+
+
+        let st3 = "I like football, I play football, I watch football" + "<br>";
+        document.write(st3.replace("I like football", "I like cricket"));
+        document.write(st3.replace(/football/g, "cricket"));
+
+
+        let r1 = st3.split(" ");
+        console.log(r1);
+    </script>
+</body>
+</html>

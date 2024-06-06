@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+</head>
+<body>
+  Enter a number:
+  <input type="text" id="numberInput">
+  
+  <br><br>
+  
+  <label>Select operation:</label>
+  <input type="radio" name="operation" value="2" id="x2"> 2X
+  <input type="radio" name="operation" value="3" id="x3"> 3X
+  <input type="radio" name="operation" value="4" id="x4"> 4X
+  
+  <div class="result" id="result"></div>
+  
+  <script>
+    function manipulateNumber() {
+    var numberInput = document.getElementById("numberInput").value;
+    console.log(numberInput)
+    }
+     
+  </script>
+</body>
+</html>

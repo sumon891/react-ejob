@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let arr = [10, 12, 7, 5, 13, 20, 30, 50];
+        let result = arr.filter((val)=>{
+            let isPrime = true;
+            for (let i = 2; i <= Math.sqrt(val); i++) {
+                if (val % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            return isPrime;
+        });
+        
+        console.log(result);
+    </script>
+</body>
+</html>
